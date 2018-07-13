@@ -19,7 +19,8 @@ namespace TaskLogger.Views
 		{
 			InitializeComponent ();
             this.activity = activity;
-            Text.Text = activity.Name;
+            BindingContext = activity;
+            //Text.Text = activity.Name;
 
         }
 	}

@@ -3,11 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskLogger.Views.DetailPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label x:Name="Text"
-                Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="CenterAndExpand">
+            <Label Text="Name" />
+            <Editor Text="{Binding Name}" />
+            <Label Text="Description" />
+            <Editor Text="{Binding Description}" />
+            <Label Text="Date" />
+            <Editor Text="{Binding Date}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
