@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:TaskLogger"
-             x:Class="TaskLogger.MainPage">
+             xmlns:local="clr-namespace:TaskLogger.Views"
+             x:Class="TaskLogger.Views.MainPage"
+             Title="TaskLogger">
 
     <ListView x:Name="ActivityView" ItemsSource="{Binding ActivityList}" RowHeight="100">
         <ListView.ItemTemplate>

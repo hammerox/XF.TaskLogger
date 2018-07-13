@@ -7,7 +7,7 @@ using Xamarin.Forms;
 using TaskLogger.Models;
 using System.Collections.ObjectModel;
 
-namespace TaskLogger
+namespace TaskLogger.Views
 {
 	public partial class MainPage : ContentPage
 	{
@@ -18,9 +18,13 @@ namespace TaskLogger
 		{
 			InitializeComponent();
             ActivityList = MockedList();
-            //ActivityView.ItemsSource = ActivityList;
             BindingContext = this;
-		}
+            ActivityView.ItemSelected += (sender, e) => {
+                var selectedActivity = (Activity)((ListView)sender).SelectedItem;
+                var detailPage = new DetailPage(selectedActivity);
+                Navigation.PushAsync(detailPage);
+            };
+        }
 
         private ObservableCollection<Activity> MockedList()
         {
