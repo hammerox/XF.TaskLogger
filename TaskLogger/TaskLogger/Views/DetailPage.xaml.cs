@@ -20,8 +20,12 @@ namespace TaskLogger.Views
 			InitializeComponent ();
             this.activity = activity;
             BindingContext = activity;
-            //Text.Text = activity.Name;
-
         }
-	}
+
+        public void OnSaveClick(object sender, EventArgs e) 
+        {
+            Navigation.PopAsync();
+        }
+
+}
 }

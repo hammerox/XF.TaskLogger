@@ -21,8 +21,12 @@ namespace TaskLogger.Views
             BindingContext = this;
             ActivityView.ItemSelected += (sender, e) => {
                 var selectedActivity = (Activity)((ListView)sender).SelectedItem;
-                var detailPage = new DetailPage(selectedActivity);
-                Navigation.PushAsync(detailPage);
+                if (selectedActivity != null)
+                {
+                    var detailPage = new DetailPage((Activity) selectedActivity.Clone());
+                    Navigation.PushAsync(detailPage);
+                    ((ListView)sender).SelectedItem = null;
+                }
             };
         }
 
