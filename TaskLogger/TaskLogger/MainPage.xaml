@@ -4,10 +4,16 @@
              xmlns:local="clr-namespace:TaskLogger"
              x:Class="TaskLogger.MainPage">
 
-    <ListView x:Name="ActivityView" ItemsSource="{Binding ActivityList}">
+    <ListView x:Name="ActivityView" ItemsSource="{Binding ActivityList}" RowHeight="100">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Name}" />
+                <ViewCell>
+                    <StackLayout Orientation="Vertical" Padding="10">
+                        <Label Text="{Binding Name}" FontAttributes="Bold" />
+                        <Label Text="{Binding Date}" />
+                        <Label Text="{Binding IsCompleted}" />
+                    </StackLayout>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
