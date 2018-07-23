@@ -5,6 +5,10 @@
              x:Class="TaskLogger.Views.MainPage"
              Title="TaskLogger">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Activity" Clicked="Add_Clicked"/>
+    </ContentPage.ToolbarItems>
+
     <ListView x:Name="ActivityView" ItemsSource="{Binding ActivityList}" RowHeight="100">
         <ListView.ItemTemplate>
             <DataTemplate>

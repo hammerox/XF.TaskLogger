@@ -18,14 +18,15 @@ namespace TaskLogger.Views
 		public DetailPage (Activity activity)
 		{
 			InitializeComponent ();
-            this.activity = activity;
-            BindingContext = activity;
+            this.activity = (activity != null) ? activity : new Activity();
+            BindingContext = this.activity;
         }
 
         public void OnSaveClick(object sender, EventArgs e) 
         {
+            // Atualizar lista em MainPage
             Navigation.PopAsync();
         }
 
-}
+    }
 }

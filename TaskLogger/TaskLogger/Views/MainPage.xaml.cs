@@ -49,5 +49,11 @@ namespace TaskLogger.Views
             });
             return list;
         }
-	}
+
+        private void Add_Clicked(object sender, EventArgs e)
+        {
+            var detailPage = new DetailPage(null);
+            Navigation.PushAsync(detailPage);
+        }
+    }
 }
