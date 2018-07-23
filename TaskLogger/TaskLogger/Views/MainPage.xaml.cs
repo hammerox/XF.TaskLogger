@@ -57,5 +57,15 @@ namespace TaskLogger.Views
             var detailPage = new DetailPage(null);
             Navigation.PushAsync(detailPage);
         }
+
+        private void Switch_Toggled(object sender, EventArgs e)
+        {
+            var switchView = (SwitchView) sender;
+            var selectedActivity = switchView.Activity;
+            if (selectedActivity != null)
+            {
+                repo.SalvarActivity(selectedActivity);
+            }
+        }
     }
 }

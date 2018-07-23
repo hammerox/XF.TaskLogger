@@ -12,6 +12,7 @@
             <Label Text="Date" />
             <Editor Text="{Binding Date}" />
             <Button x:Name="SaveButton" Text="Save" Clicked="OnSaveClick"/>
+            <Button x:Name="RemoveButton" Text="Remove" Clicked="OnRemoveClick"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

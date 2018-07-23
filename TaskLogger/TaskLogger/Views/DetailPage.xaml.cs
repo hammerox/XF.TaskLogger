@@ -31,5 +31,11 @@ namespace TaskLogger.Views
             Navigation.PopAsync();
         }
 
+        public void OnRemoveClick(object sender, EventArgs e) 
+        {
+            repo.RemoverActivity(this.activity.Id);
+            Navigation.PopAsync();
+        }
+
     }
 }
