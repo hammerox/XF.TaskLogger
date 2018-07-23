@@ -9,13 +9,13 @@ using Xamarin.Forms;
 
 namespace TaskLogger.Repositories
 {
-    public class ActivityRepostory
+    public class ActivityRepository
     {
-        private ActivityRepostory() { }
+        private ActivityRepository() { }
 
         private static SQLiteConnection database;
-        private static readonly ActivityRepostory instance = new ActivityRepostory();
-        public static ActivityRepostory Instance
+        private static readonly ActivityRepository instance = new ActivityRepository();
+        public static ActivityRepository Instance
         {
             get
             {
@@ -30,7 +30,7 @@ namespace TaskLogger.Repositories
 
         static object locker = new object();
 
-        public static int SalvarActivity(Activity activity)
+        public int SalvarActivity(Activity activity)
         {
             lock (locker)
             {
@@ -43,7 +43,7 @@ namespace TaskLogger.Repositories
             }
         }
 
-        public static IEnumerable<Activity> GetActivities()
+        public IEnumerable<Activity> GetActivities()
         {
             lock (locker)
             {
@@ -52,7 +52,7 @@ namespace TaskLogger.Repositories
             }
         }
 
-        public static Activity GetActivity(int Id)
+        public Activity GetActivity(int Id)
         {
             lock (locker)
             {
@@ -61,7 +61,7 @@ namespace TaskLogger.Repositories
             }
         }
 
-        public static int RemoverActivity(int Id)
+        public int RemoverActivity(int Id)
         {
             lock (locker)
             {

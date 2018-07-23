@@ -6,18 +6,22 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using TaskLogger.Models;
 using System.Collections.ObjectModel;
+using TaskLogger.Repositories;
 
 namespace TaskLogger.Views
 {
 	public partial class MainPage : ContentPage
 	{
         public ObservableCollection<Activity> ActivityList { get; private set; }
+        public ActivityRepository repo;
 
 
         public MainPage()
 		{
 			InitializeComponent();
-            ActivityList = MockedList();
+            repo = ActivityRepository.Instance;
+
+            ActivityList = DatabaseList();
             BindingContext = this;
             ActivityView.ItemSelected += (sender, e) => {
                 var selectedActivity = (Activity)((ListView)sender).SelectedItem;
@@ -30,9 +34,20 @@ namespace TaskLogger.Views
             };
         }
 
-        private ObservableCollection<Activity> MockedList()
+        private ObservableCollection<Activity> DatabaseList()
         {
-            var list = new ObservableCollection<Activity>();
+            List < Activity > list = repo.GetActivities().ToList();
+            if (list.Count == 0)
+            {
+                MockedList().ForEach(x => repo.SalvarActivity(x));
+                list = repo.GetActivities().ToList();
+            }
+            return new ObservableCollection<Activity>(list);
+        }
+
+        private List<Activity> MockedList()
+        {
+            var list = new List<Activity>();
             list.Add(new Activity()
             {
                 Name = "Gym",

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskLogger.Android", "TaskL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskLogger.iOS", "TaskLogger\TaskLogger.iOS\TaskLogger.iOS.csproj", "{FF0235E2-95B8-45AA-A0FA-FF046CC3D334}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskLogger", "TaskLogger\TaskLogger\TaskLogger.csproj", "{A163CDA4-FC5B-4BB8-BF84-D0B64EC0E515}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskLogger", "TaskLogger\TaskLogger\TaskLogger.csproj", "{A163CDA4-FC5B-4BB8-BF84-D0B64EC0E515}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
