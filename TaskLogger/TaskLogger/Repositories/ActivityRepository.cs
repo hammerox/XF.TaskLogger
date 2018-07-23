@@ -68,5 +68,25 @@ namespace TaskLogger.Repositories
                 return database.Delete<Activity>(Id);
             }
         }
+
+        public List<Activity> MockedList()
+        {
+            var list = new List<Activity>();
+            list.Add(new Activity()
+            {
+                Name = "Gym",
+                Description = "Byceps, Quads and Abs",
+                Date = new DateTime(1531443341),
+                IsCompleted = false
+            });
+            list.Add(new Activity()
+            {
+                Name = "Shopping",
+                Description = "I need to buy a lot of clothes",
+                Date = new DateTime(1530665741),
+                IsCompleted = true
+            });
+            return list;
+        }
     }
 }
